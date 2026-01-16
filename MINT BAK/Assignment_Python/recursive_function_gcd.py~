@@ -1,0 +1,4 @@
+def rec_gcd(a, b):
+	if b == 0:
+		return a
+	return rec_gcd(b, a % b)

@@ -1,0 +1,8 @@
+def find(x,y):
+	return max(x,y)
+x=int(input("Enter the number:-"))
+y=int(input("Enter the number:-"))
+print("Maximum",x,y,"=",find(x,y))
+a=int(input("Enter the number:-"))
+b=int(input("Enter the number:-"))
+print("Maximum",a,b,"=",find(a,b))

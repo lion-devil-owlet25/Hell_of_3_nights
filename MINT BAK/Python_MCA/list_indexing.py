@@ -1,0 +1,9 @@
+a=[1,5,6,3,'Lion',[26,5,89,56.3,'Devil'],'Owlet',800]
+print(a)
+b=a[0]
+c=a[-1]
+print(b,c)
+m=a.index(6)
+print(m)
+o=a[len(a):-9:-1]
+print(o)

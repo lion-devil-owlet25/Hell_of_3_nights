@@ -1,0 +1,11 @@
+def rec_fibonacci(n):
+	if n <= 0:
+		return 0
+	if n == 1:
+		return 1
+	return rec_fibonacci(n - 1) + rec_fibonacci(n - 2)
+
+n=int(input("Enter the number of series:-"))
+print("Nth Fibonacci term:",rec_fibonacci(n))
+for i in range(n):
+	print(rec_fibonacci(i), end=" ")

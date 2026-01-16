@@ -1,0 +1,231 @@
+1. Define a function that will calculate at most two numbers and call the function twice from the main module with two different sets of values ​​taken from the user.
+
+Ans:-
+# Function definition
+def calculate(a, b):
+    result = a + b        # you can change to *, -, / if needed
+    return result
+
+# Main module
+# First set of values
+x1 = float(input("Enter first number for calculation 1: "))
+y1 = float(input("Enter second number for calculation 1: "))
+print("Result of first calculation:", calculate(x1, y1))
+
+# Second set of values
+x2 = float(input("Enter first number for calculation 2: "))
+y2 = float(input("Enter second number for calculation 2: "))
+print("Result of second calculation:", calculate(x2, y2))
+
+2.Define a function that will calculate the factorial of a number and call the function from the main module with the values ​​taken from the user.
+
+Ans:-
+# Function to calculate factorial
+def factorial(n):
+    fact = 1
+    for i in range(1, n + 1):
+        fact *= i
+    return fact
+
+# Main module
+num = int(input("Enter a number to find its factorial: "))
+
+result = factorial(num)
+print("Factorial of", num, "is:", result)
+
+3. Define a function that will take the principal amount, time in years and interest rate in percentage as inputs and calculate the simple interest rate. All three arguments have default values ​​- 1000 (principal amount), 5 (time in years) and 10 (interest rate in percentage). Call the function from the main module in all possible ways and calculate the simple interest rate each time.
+
+
+Ans:-
+
+# Function to calculate simple interest
+def simple_interest(principal=1000, time=5, rate=10):
+    si = (principal * time * rate) / 100
+    return si
+
+
+# Main module
+
+# 1. Calling with NO arguments (all default values)
+print("1. Using all default values:", simple_interest())
+
+# 2. Calling with ONLY principal
+print("2. Only principal changed:", simple_interest(2000))
+
+# 3. Calling with principal and time
+print("3. Principal and time changed:", simple_interest(2000, 3))
+
+# 4. Calling with all three values
+print("4. All three values changed:", simple_interest(2000, 3, 8))
+
+# 5. Calling using keyword arguments (order doesn't matter)
+print("5. Using keyword arguments:", simple_interest(rate=12, principal=1500, time=4))
+
+# 6. Calling with only rate changed (keyword)
+print("6. Only rate changed:", simple_interest(rate=15))
+
+
+4. Define a function that will calculate at least three numbers and call the function from the main module using keyword arguments to display the result by changing the positional argument setting.
+
+
+Ans:-
+
+# Function to calculate the sum of 3 numbers
+def calculate(a, b, c):
+    return a + b + c
+
+
+# Main module
+
+# Calling the function using keyword arguments (order changed)
+result1 = calculate(c=30, a=10, b=20)
+print("Result 1:", result1)
+
+# Another call with different keyword order
+result2 = calculate(b=5, c=15, a=10)
+print("Result 2:", result2)
+
+# Another call using keywords (random order)
+result3 = calculate(c=100, b=50, a=25)
+print("Result 3:", result3)
+
+
+5. Define a function that will take the name of a student and a set of his favorite games and this function will display the name of the student and his favorite game. Use variable length arguments in function parameters so that different students can have different number of games.
+
+Ans:-
+
+# Function with variable length arguments
+def student_games(name, *games):
+    print("Student Name:", name)
+    print("Favorite Games:")
+    for game in games:
+        print("-", game)
+    print()   # blank line for clarity
+
+
+# Main module
+student_games("Rahul", "Cricket", "Football")
+
+student_games("Anita", "Badminton", "Chess", "Ludo", "Carrom")
+
+student_games("Suman")   # no games provided
+
+6. Create a main module using functions where from the main module the user will call two functions f1(0) and f2, f1(0) will call f3() and f4(), f2(0) will call f5() and f6(). f30) will call f70) and f6() will call f8().
+
+Ans:-
+
+# Function definitions
+
+def f7():
+    print("Inside f7()")
+
+def f8():
+    print("Inside f8()")
+
+def f3():
+    print("Inside f3()")
+    f7()          # f3 calls f7
+
+def f4():
+    print("Inside f4()")
+
+def f5():
+    print("Inside f5()")
+
+def f6():
+    print("Inside f6()")
+    f8()          # f6 calls f8
+
+def f1(x):
+    print("Inside f1() with value:", x)
+    f3()          # f1 calls f3
+    f4()          # f1 calls f4
+
+def f2(x):
+    print("Inside f2() with value:", x)
+    f5()          # f2 calls f5
+    f6()          # f2 calls f6
+
+
+# Main module
+f1(0)
+f2(0)
+
+
+7. Define a recursive function that will calculate the factorial of a number. Create the program from the main module.
+
+Ans:-
+
+# Recursive function to calculate factorial
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+
+# Main module
+num = int(input("Enter a number to find its factorial: "))
+
+result = factorial(num)
+print("Factorial of", num, "is:", result)
+
+8. Define a recursive function that will calculate the Fibonacci number for the nth term (the value of n should be input by the user). Create a program from the main module using that function to display the Fibonacci series for n terms.
+
+Ans:-
+
+# Recursive function to calculate Fibonacci of n
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+# Main module
+n = int(input("Enter how many terms of Fibonacci series you want: "))
+
+print("Fibonacci series:")
+for i in range(n):
+    print(fibonacci(i), end=" ")
+
+9. Define a recursive function to find the sum of the digits of a number (the number should be input by the user).
+
+
+Ans:-
+
+# Recursive function to find the sum of digits
+def sum_of_digits(n):
+    if n == 0:
+        return 0
+    else:
+        return (n % 10) + sum_of_digits(n // 10)
+
+
+# Main module
+num = int(input("Enter a number: "))
+
+result = sum_of_digits(num)
+print("Sum of digits of", num, "is:", result)
+
+10. Define a recursive function to calculate the GCD/HCF of two numbers.
+
+Ans:-
+
+# Recursive function to find GCD / HCF
+def gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+
+
+# Main module
+x = int(input("Enter first number: "))
+y = int(input("Enter second number: "))
+
+result = gcd(x, y)
+print("GCD/HCF of", x, "and", y, "is:", result)
+

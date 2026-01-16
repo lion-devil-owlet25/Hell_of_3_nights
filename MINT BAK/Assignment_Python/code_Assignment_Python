@@ -1,0 +1,272 @@
+def assignment_set_1():
+    # 1
+    p = float(input())
+    t = float(input())
+    r = float(input())
+    si = (p * t * r) / 100
+    print(si)
+
+    # 2
+    c = float(input())
+    f = (c * 9 / 5) + 32
+    print(f)
+
+    # 3
+    basic = float(input())
+    da = 0.4 * basic
+    hra = 0.2 * basic
+    ma = 300
+    gross = basic + da + hra + ma
+    print(gross)
+
+    # 4
+    m1 = float(input())
+    m2 = float(input())
+    m3 = float(input())
+    total = m1 + m2 + m3
+    per = total / 3
+    print(total, per)
+
+    # 5
+    length = float(input())
+    breadth = float(input())
+    area_rect = length * breadth
+    peri_rect = 2 * (length + breadth)
+    radius = float(input())
+    area_circle = 3.14159 * radius * radius
+    circum_circle = 2 * 3.14159 * radius
+    print(area_rect, peri_rect, area_circle, circum_circle)
+
+    # 6
+    a = float(input())
+    b = float(input())
+    print(a + b)
+    print(abs(a - b))
+    print(a * b)
+    if b != 0:
+        print(a / b)
+    else:
+        print("INF")
+
+    # 7
+    n = int(input())
+    if n % 2 == 0:
+        print("EVEN")
+    else:
+        print("ODD")
+
+    # 8
+    year = int(input())
+    if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
+        print("LEAP")
+    else:
+        print("NOT LEAP")
+
+    # 9
+    sid = input().strip()
+    sname = input().strip()
+    tamil = float(input())
+    eng = float(input())
+    math = float(input())
+    total = tamil + eng + math
+    per = total / 3
+    print(sid, sname, total, per)
+
+    # 10
+    m1 = float(input())
+    m2 = float(input())
+    m3 = float(input())
+    total = m1 + m2 + m3
+    per = total / 3
+    if per >= 60:
+        print("FIRST")
+    elif per >= 50:
+        print("SECOND")
+    elif per >= 40:
+        print("THIRD")
+    else:
+        print("FAIL")
+
+    # 11
+    a = float(input())
+    b = float(input())
+    c = float(input())
+    if a + b > c and a + c > b and b + c > a:
+        if a == b == c:
+            print("EQUILATERAL")
+        elif a == b or b == c or a == c:
+            print("ISOSCELES")
+        else:
+            print("SCALENE")
+    else:
+        print("NOT TRIANGLE")
+
+    # 12
+    days = int(input())
+    if days <= 5:
+        fine = days * 50
+    elif days <= 10:
+        fine = 5 * 50 + (days - 5) * 100
+    elif days <= 15:
+        fine = 5 * 50 + 5 * 100 + (days - 10) * 150
+    else:
+        fine = 0
+    print(fine)
+
+    # 13
+    calls = int(input())
+    if calls <= 100:
+        bill = 0
+    elif calls <= 500:
+        bill = (calls - 100) * 0.8
+    else:
+        bill = 400 * 0.8 + (calls - 500) * 1.25
+    print(bill)
+
+
+def max_two(a, b):
+    if a > b:
+        return a
+    return b
+
+
+def factorial(n):
+    f = 1
+    for i in range(2, n + 1):
+        f *= i
+    return f
+
+
+def simple_interest(p=1000, t=5, r=10):
+    return (p * t * r) / 100
+
+
+def min_three(a, b, c):
+    m = a
+    if b < m:
+        m = b
+    if c < m:
+        m = c
+    return m
+
+
+def fav_sports(name, *sports):
+    return name, list(sports)
+
+
+def f0():
+    print("F0")
+
+
+def f1():
+    print("F1")
+    f0()
+
+
+def f2():
+    print("F2")
+    f1()
+
+
+def f3():
+    print("F3")
+    f0()
+
+
+def f4():
+    print("F4")
+    f3()
+
+
+def f5():
+    print("F5")
+    f0()
+
+
+def f6():
+    print("F6")
+    f0()
+
+
+def rec_factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * rec_factorial(n - 1)
+
+
+def rec_fibonacci(n):
+    if n <= 0:
+        return 0
+    if n == 1:
+        return 1
+    return rec_fibonacci(n - 1) + rec_fibonacci(n - 2)
+
+
+def rec_sum_digits(n):
+    if n == 0:
+        return 0
+    return n % 10 + rec_sum_digits(n // 10)
+
+
+def rec_gcd(a, b):
+    if b == 0:
+        return a
+    return rec_gcd(b, a % b)
+
+
+class Student:
+    def __init__(self, name, roll, marks):
+        self.name = name
+        self.roll = roll
+        self.marks = marks
+
+    def show(self):
+        print(self.name, self.roll, self.marks)
+
+
+class Complex:
+    count = 0
+
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
+        Complex.count += 1
+
+    def show(self):
+        print(str(self.real) + "+" + str(self.imag) + "i")
+
+
+class Account:
+    count = 0
+
+    def __init__(self, name, acc_no, balance):
+        self.name = name
+        self.acc_no = acc_no
+        self.balance = balance
+        Account.count += 1
+
+    def deposit(self, amt):
+        self.balance += amt
+
+    def withdraw(self, amt):
+        if amt <= self.balance:
+            self.balance -= amt
+
+    def show(self):
+        print(self.name, self.acc_no, self.balance)
+
+
+class Car:
+    count = 0
+
+    def __init__(self, car_id, car_name):
+        self.car_id = car_id
+        self.car_name = car_name
+        Car.count += 1
+
+    def show(self):
+        print(self.car_id, self.car_name)
+
+
+def pattern_1(n):
+    for i in range(1, n + 1):

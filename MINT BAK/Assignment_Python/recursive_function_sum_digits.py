@@ -1,0 +1,6 @@
+def rec_sum_digits(n):
+	if n == 0:
+		return 0
+	return (n % 10) + rec_sum_digits(n // 10)
+n=int(input("Enter a number:-"))
+print("Sum of digits of",n,"is ",rec_sum_digits(n))

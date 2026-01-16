@@ -1,0 +1,6 @@
+def fav_sports(name, *sports):
+	return name, list(sports)
+name=input("Enter your name:-")
+sports=list(input("Enter your favourite sports:-"))
+print(fav_sports(name,sports))
+
