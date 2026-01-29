@@ -1,0 +1,6 @@
+Python is a popular programming language.
+I am learning python for MCA.
+Many developers love python.
+PYTHON can be used for web development.
+Java and C are different from python.
+
